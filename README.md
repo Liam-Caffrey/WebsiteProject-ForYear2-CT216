@@ -1,7 +1,10 @@
 # WebsiteProject-ForYear2-CT216
+https://cliffordle.web.app/
+
+
 Major Project of Year 2.
 This was a group Project between 2, (originally 5) people.
-The server is now down as our Firebase Credits have been used up.
+The server could go down as our firebase credits are limited.
 Me and one other Classmate made a website which contained a guessing game. 
 The code was orginally uploaded to his Github but is on private so is re-uploaded here.
 Google firebase was used and played a large part in the project. 
