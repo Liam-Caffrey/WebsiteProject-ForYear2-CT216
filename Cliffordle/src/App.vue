@@ -10,23 +10,28 @@
 
 
   <header>
-    <div>
-      <h1 id="titleOfPro" class="title is-1"> CLIFFORDLE </h1>
+    <div style="text-align: center;">
+      <h1 id="titleOfPro" class="title is-1" style="color:white; font-size: 40px;"> CLIFFORDLE </h1>
     </div>
-    <nav>
-      <a class="sign-in">sign in</a>
-      <a class="create-account">create account</a>
-    </nav>
+
+
+    <button @click="handleSignOut" v-if="isLoggedIn"> Sign Out </button>
   </header>
 
-  <p><input type="text" placeholder="Email" v-model="email" v-if="isLoggedOut"/></p>
-  <p><input type="password" placeholder="Password" v-model="password" v-if="isLoggedOut"/></p>
-  <button @click="register" v-if="isLoggedOut"> Create </button>
-  <button @click="login" v-if="isLoggedOut"> Login </button>
-  <p v-if="errMsg"> {{ errMsg }}</p>
-  <button @click="handleSignOut" v-if="isLoggedIn"> Sign Out </button>
-
   <SearchBar v-if="isLoggedIn" ></SearchBar>
+  <GuessList v-if="isLoggedIn"></GuessList>
+
+  <div style="text-align: center;">
+    <p>
+      <input style="width: 300px; height: 50px; font-size: 20px;" type="text" placeholder="Email" v-model="email" v-if="isLoggedOut"/>
+    </p>
+    <p>
+      <input style="width: 300px; height: 50px; font-size: 20px;" type="password" placeholder="Password" v-model="password" v-if="isLoggedOut"/>
+    </p>
+    <button @click="register" v-if="isLoggedOut"> Create </button>
+    <button @click="login" v-if="isLoggedOut"> Login </button>
+    <p v-if="errMsg"> {{ errMsg }}</p>
+  </div>
 
 
   </body>
@@ -35,6 +40,7 @@
 
 <script setup>
 import SearchBar from './components/SearchBar.vue'
+import GuessList from './components/GuessList.vue'
 import { onMounted, ref } from "vue";
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
@@ -53,6 +59,7 @@ const register = () => {
       .then((data) => {
         console.log("Successfully registered")
         console.log(auth.currentUser)
+        errMsg.value = "";
       })
       .catch((error) => {
         console.log(error.code);
