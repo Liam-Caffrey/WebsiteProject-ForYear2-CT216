@@ -15,3 +15,7 @@ So if the user guesses a player who is smaller than the target player, they will
 While my Teammate/Classmate handled they guessing game and programmed its functionality, I made the login, create account and signout pages.
 The Project had to have sign-in and sign-out funcitonality and it would have been expanded upon greatly had the 2 of us had more resources.
 The Sign-in, Sign-out and create account pages where all apart of and used Firebase
+I also handled CSS for our webpage, wasn't a main focus we mainly focused on funciton over form.
+We ran into issues While making the guessing portion of our game, while the game worked locally a function that was used within the final build would not work on every Browser.
+Mainly older and outdated ones
+This prevented us from launching the game in it's final version to the cloud, the final version of the login and sign-up page still works
